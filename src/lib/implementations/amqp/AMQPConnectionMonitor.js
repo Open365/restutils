@@ -49,6 +49,9 @@ AMQPConnectionMonitor.prototype.setConnection = function (conn) {
         self.emit('close');
     });
 
+    this.conn.on('error', function (err) {
+       self.logger.error(err);
+    });
 };
 
 AMQPConnectionMonitor.prototype.connectionReady = function () {

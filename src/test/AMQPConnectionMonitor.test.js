@@ -53,7 +53,7 @@ suite('AMQPConnectionMonitor', function(){
 		amqpConnetion = new amqp.Connection();
 		amqpConnetionMock = sinon.mock(amqpConnetion);
 
-		expOn = amqpConnetionMock.expects('on').twice();
+		expOn = amqpConnetionMock.expects('on').thrice();
 		expRemoveListeners = amqpConnetionMock.expects('removeListener').once().withExactArgs('ready', readyCallback);
 		expRemoveListenersClose = amqpConnetionMock.expects('removeListener').once().withExactArgs('close', closeCallback);
 
@@ -90,7 +90,7 @@ suite('AMQPConnectionMonitor', function(){
 	});
 
 	suite('#setConnection', function(){
-		test('Should call on to stablish readyCallback', function(){
+		test('Should call on to establish readyCallback', function(){
 			sut.conn = false;
 			sut.setConnection(amqpConnetion);
 			expOn.verify();
