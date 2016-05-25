@@ -25,7 +25,7 @@ function BodyParameterParser() {
 
 BodyParameterParser.prototype._unserializeParameters = function _unserializeParameters(collection) {
     for (var key in collection) {
-        if (collection.hasOwnProperty(key)) {
+        if (Object.hasOwnProperty.call(collection, key)) {
             var data;
             try {
                 data = JSON.parse(collection[key]);
