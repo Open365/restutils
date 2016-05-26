@@ -1,6 +1,6 @@
 {
   "name": "eyeos-restutils",
-  "version": "0.0.381",
+  "version": "0.0.382",
   "description": "Base RestController and Http endpoint",
   "main": "./src/restUtils.js",
   "dependencies": {
